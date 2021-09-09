@@ -1,15 +1,16 @@
 #!/usr/bin/python3
-import sys
+from sys import argv
 
 
 def main():
-    l = len(sys.argv)
-    print('{:d} argument{:}'.format(l - 1, '.' if l == 1 else
-                                    (':' if l == 2 else 's:')))
-    i = 1
-    for arg in sys.argv[1:]:
-        print("{:d}: {}".format(i, arg))
-        i += 1
+    n = len(argv) - 1
+    print("{:d} argument{}{}".format(n, 's' if n == 0 or
+                                     n > 1 else '', '.' if n < 1 else ":"))
+    t = 0
+    for i in argv:
+        if t > 0:
+            print("{:d}: {:s}".format(t, i))
+        t += 1
 
 if __name__ == "__main__":
     main()

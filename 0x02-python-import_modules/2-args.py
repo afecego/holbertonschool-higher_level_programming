@@ -1,14 +1,12 @@
 #!/usr/bin/python3
-if __name__ == "__main__":
-	import sys
+if __name__ == '__main__':
+    import sys
 
-	args = len(sys.argv)
+    l = len(sys.argv)
 
-    sum = 0
-
-    if args == 0:
-        print("0")
-    else:
-        for i in range(1, args):
-            sum = sum + int(sys.argv[i])
-        print("{}".format(sum))
+    print('{:d} argument{:}'.format(l - 1, '.' if l == 1 else
+          (':' if l == 2 else 's:')))
+    i = 1
+    for arg in sys.argv[1:]:
+        print("{:d}: {}".format(i, arg))
+        i += 1

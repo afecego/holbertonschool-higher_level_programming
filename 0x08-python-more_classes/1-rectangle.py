@@ -16,7 +16,7 @@ class Rectangle:
 
     @width.setter
     def width(self, value):
-        """Set the size of the square"""
+        """Set the width of the restangule"""
         if type(value) is int:
             if value >= 0:
                 self.__width = value
@@ -27,10 +27,12 @@ class Rectangle:
     
     @property
     def height(self):
+        """return private height"""
         return self.__height
 
     @height.setter
     def height(self, value):
+        """Set the height of the restangule"""
         if type(value) is int:
             if value >= 0:
                 self.__height = value

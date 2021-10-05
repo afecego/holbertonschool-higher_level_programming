@@ -1,4 +1,4 @@
 #!/usr/bin/python3
-counter = 0
+count = 0
 def magic_string():
-    global counter; counter += 1; return ("BestSchool, " * counter)
+    global count; count += 1; return (", ".join(['BestSchool'] * count))

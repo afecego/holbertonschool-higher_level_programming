@@ -54,10 +54,6 @@ Float overflow:
 	Traceback (most recent call last):
 	OverflowError: cannot convert float infinity to integer
 
-Checking for passed NaN:
-	>>> add_integer(float('NaN'), 0)
-	89
-
 No argument:
 	>>> add_integer()
 	Traceback (most recent call last):

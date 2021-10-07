@@ -62,12 +62,6 @@ Float overflow:
 	Traceback (most recent call last):
 	OverflowError: cannot convert float infinity to integer
 
-Checking bool with number:
-	>>> add_integer(True, 1)
-	Traceback (most recent call last):
-	TypeError: a must be an integer
-
-Checking number with bool:
-	>>> add_integer(0, False)
-	Traceback (most recent call last):
-	TypeError: b must be an integer
+Checking 0 both:
+	>>> add_integer(0, 0)
+	0

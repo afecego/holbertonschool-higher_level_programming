@@ -59,5 +59,6 @@ Checking for passed NaN:
 	89
 
 No argument:
-	>>> add_integer(2)
-	100
+	>>> add_integer()
+	Traceback (most recent call last):
+	TypeError: add_integer() missing 1 required positional argument: 'a'

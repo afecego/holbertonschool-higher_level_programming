@@ -53,16 +53,17 @@ Checking for passed NaN:
 	>>> add_integer(float('NaN'), 0)
 	89
 
-Checking for passed NaN:
-	>>> add_integer(float('NaN'), 0)
-	89
-
 Float overflow:
 	>>> add_integer(1, float('inf'))
 	Traceback (most recent call last):
 	OverflowError: cannot convert float infinity to integer
 
-Checking 0 both:
+Checking 0 both b:
 	>>> add_integer("0", 0)
 	Traceback (most recent call last):
 	TypeError: a must be an integer
+
+Checking 0 both a:
+	>>> add_integer(0, "0")
+	Traceback (most recent call last):
+	TypeError: b must be an integer

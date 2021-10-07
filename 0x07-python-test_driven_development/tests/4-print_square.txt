@@ -28,3 +28,14 @@ Size is not float and must be >= 0::
 	>>> print_square(-2.2)
 	Traceback (most recent call last):
 	TypeError: size must be an integer
+
+Funtion ok:
+	>>> print_square(2)
+	##
+	##
+
+Size None:
+	>>> print_square()
+	Traceback (most recent call last):
+	TypeError: print_square() missing 1 required positional argument: 'size'
+

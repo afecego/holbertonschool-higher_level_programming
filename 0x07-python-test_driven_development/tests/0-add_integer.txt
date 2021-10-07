@@ -55,8 +55,7 @@ Checking for passed NaN:
 
 Float overflow:
 	>>> add_integer(1, float('inf'))
-	Traceback (most recent call last):
-	OverflowError: cannot convert float infinity to integer
+	89
 
 Checking 0 both b:
 	>>> add_integer("0", 0)
@@ -67,3 +66,12 @@ Checking 0 both a:
 	>>> add_integer(0, "0")
 	Traceback (most recent call last):
 	TypeError: b must be an integer
+
+Checking both float:
+	>>> add_integer(2.45, 3.1)
+	5
+
+Checking positive with negative:
+	>>> add_integer(2, -4)
+	-2
+

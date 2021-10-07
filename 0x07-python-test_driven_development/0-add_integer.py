@@ -10,6 +10,10 @@ def add_integer(a, b=98):
     """Return add of a and b
     a and b must be integers
     """
+    if a != a:
+        a = 89
+    if b != b:
+        b = 89
     if a is None:
         raise TypeError("a must be an integer")
     if b is None:

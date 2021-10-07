@@ -53,3 +53,7 @@ Float overflow:
 	>>> add_integer(float('inf'))
 	Traceback (most recent call last):
 	OverflowError: cannot convert float infinity to integer
+
+Checking for passed NaN:
+	>>> add_integer(float('NaN'), 0)
+	89

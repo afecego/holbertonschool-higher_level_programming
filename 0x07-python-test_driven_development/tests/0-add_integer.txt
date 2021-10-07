@@ -1,0 +1,46 @@
+The ``0-add_integer`` module
+======================
+
+Using ``add_integer``
+-------------------
+
+This is a funtion that add two variables.  First import
+``add_integer`` from the ``0-add_integer`` module:
+
+    >>> add_integer = __import__("0-add_integer").add_integer
+
+Integer positives:
+    >>> add_integer(2, 3)
+    5
+
+Integer negatives:
+	>>> add_integer(-1, -3)
+	-4
+
+Integer positives and negatives:
+	>>> add_integer(-2, 4)
+	2
+
+First variable must be an integer:
+	>>> add_integer("dos", 4)
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+
+Second variable must be an integer:
+	>>> add_integer(2, "tres")
+	Traceback (most recent call last):
+	TypeError: b must be an integer
+
+Variable change type float in integer:
+	>>> add_integer(2.2, 1)
+	3
+
+Variable change type float in integer:
+	>>> add_integer(2, 4.3)
+	6
+
+Both variables must be integers:
+	>>> add_integer("dos", "cuatro")
+	Traceback (most recent call last):
+	TypeError: a must be an integer
+

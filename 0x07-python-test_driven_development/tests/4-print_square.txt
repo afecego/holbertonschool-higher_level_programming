@@ -1,0 +1,30 @@
+The ``4-print_square`` module
+======================
+
+Using ``print_square``
+-------------------
+
+This is a funtion that print a square whit the character "#".  First import
+``print_square`` from the ``4-print_square`` module:
+
+    >>> print_square = __import__("4-print_square").print_square
+
+Size must be integer:
+	>>> print_square("a")
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+Size must be >= 0:
+	>>> print_square(-2)
+	Traceback (most recent call last):
+	ValueError: size must be >= 0
+
+Size is not float:
+	>>> print_square(2.2)
+	Traceback (most recent call last):
+	TypeError: size must be an integer
+
+Size is not float and must be >= 0::
+	>>> print_square(-2.2)
+	Traceback (most recent call last):
+	TypeError: size must be an integer

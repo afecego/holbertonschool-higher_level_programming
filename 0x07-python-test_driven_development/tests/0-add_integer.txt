@@ -57,3 +57,7 @@ Float overflow:
 Checking for passed NaN:
 	>>> add_integer(float('NaN'), 0)
 	89
+
+No argument:
+	>>> add_integer(2)
+	100

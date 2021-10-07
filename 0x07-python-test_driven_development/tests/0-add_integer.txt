@@ -43,3 +43,13 @@ Both variables must be integers:
 	>>> add_integer("dos", "cuatro")
 	Traceback (most recent call last):
 	TypeError: a must be an integer
+
+Pass no argument
+	>>> add_integer()
+	Traceback (most recent call last):
+	TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Float overflow:
+	>>> add_integer(float('inf'))
+	Traceback (most recent call last):
+	OverflowError: cannot convert float infinity to integer

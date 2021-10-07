@@ -43,4 +43,3 @@ Both variables must be integers:
 	>>> add_integer("dos", "cuatro")
 	Traceback (most recent call last):
 	TypeError: a must be an integer
-

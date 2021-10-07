@@ -63,5 +63,6 @@ Float overflow:
 	OverflowError: cannot convert float infinity to integer
 
 Checking 0 both:
-	>>> add_integer(0, 0)
-	0
+	>>> add_integer("0", 0)
+	Traceback (most recent call last):
+	TypeError: a must be an integer

@@ -57,7 +57,3 @@ Float overflow:
 Checking for passed NaN:
 	>>> add_integer(float('NaN'), 0)
 	89
-
-Checking for passed inf:
-	>>> add_integer(1, float('inf'))
-	89

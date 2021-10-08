@@ -20,7 +20,7 @@ No arguments:
 	>>> m_a = []
 	>>> m_b = []
 	>>> lazy_matrix_mul(m_a, m_b)
-	False
+	0.0
 
 Only one arguments:
 	>>> m_a = [[1, 2], [3, 4]]
@@ -48,7 +48,7 @@ Whit string:
 	>>> m_b = [[1, 2], ["b", 4]]
 	>>> lazy_matrix_mul(m_a, m_b)
 	Traceback (most recent call last):
-	ValueError: data type must provide an itemsize
+	TypeError: invalid data type for einsum
 
 Size of rows:
 	>>> m_a = [[1, 2, 5], [3, 4]]
@@ -83,27 +83,28 @@ Type data:
 	>>> m_b = "world"
 	>>> lazy_matrix_mul(m_a, m_b)
 	Traceback (most recent call last):
-	TypeError: ufunc 'multiply' did not contain a loop with signature matching types dtype('<U5') dtype('<U5') dtype('<U5')
+	ValueError: Scalar operands are not allowed, use '*' instead
 
 Type data:
 	>>> m_a = "Hello"
 	>>> m_b = [[1, 2], [3, 4]]
 	>>> lazy_matrix_mul(m_a, m_b)
 	Traceback (most recent call last):
-	TypeError: ufunc 'multiply' did not contain a loop with signature matching types dtype('<U5') dtype('<U5') dtype('<U5')
+	ValueError: Scalar operands are not allowed, use '*' instead
 
 Be a list/matrix:
 	>>> m_a = 2
 	>>> m_b = 4
 	>>> lazy_matrix_mul(m_a, m_b)
-	8
+	Traceback (most recent call last):
+	ValueError: Scalar operands are not allowed, use '*' instead
 
 Be a list/matrix:
 	>>> m_a = 2
 	>>> m_b = [[1, 2], [3, 4]]
 	>>> lazy_matrix_mul(m_a, m_b)
-	array([[2, 4],
-	       [6, 8]])
+	Traceback (most recent call last):
+	ValueError: Scalar operands are not allowed, use '*' instead
 
 Second matrix biger:
 	>>> m_a = [[1, 2], [3, 4]]
@@ -117,14 +118,14 @@ Arguments none:
 	>>> m_b = None
 	>>> lazy_matrix_mul(m_a, m_b)
 	Traceback (most recent call last):
-	TypeError: unsupported operand type(s) for *: 'NoneType' and 'NoneType'
+	TypeError: Object arrays are not currently supported
 
 Numbert in string:
 	>>> m_a = [[1, 2], ["3", 4]]
 	>>> m_b = [[1, 2], [3, 4]]
 	>>> lazy_matrix_mul(m_a, m_b)
 	Traceback (most recent call last):
-	ValueError: data type must provide an itemsize
+	TypeError: invalid data type for einsum
 
 Negative:
 	>>> m_a = [[1, -2], [3, 4]]

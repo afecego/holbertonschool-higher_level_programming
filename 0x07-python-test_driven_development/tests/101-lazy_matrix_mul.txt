@@ -77,3 +77,17 @@ No arguments:
 	>>> lazy_matrix_mul(m_a, m_b)
 	Traceback (most recent call last):
 	ValueError: shapes (1,0) and (2,2) not aligned: 0 (dim 1) != 2 (dim 0)
+
+Type data:
+	>>> m_a = "Hello"
+	>>> m_b = "world"
+	>>> lazy_matrix_mul(m_a, m_b)
+	Traceback (most recent call last):
+	TypeError: ufunc 'multiply' did not contain a loop with signature matching types dtype('<U5') dtype('<U5') dtype('<U5')
+
+Type data:
+	>>> m_a = "Hello"
+	>>> m_b = [[1, 2], [3, 4]]
+	>>> lazy_matrix_mul(m_a, m_b)
+	Traceback (most recent call last):
+	TypeError: ufunc 'multiply' did not contain a loop with signature matching types dtype('<U5') dtype('<U5') dtype('<U5')

@@ -91,3 +91,17 @@ Type data:
 	>>> lazy_matrix_mul(m_a, m_b)
 	Traceback (most recent call last):
 	TypeError: ufunc 'multiply' did not contain a loop with signature matching types dtype('<U5') dtype('<U5') dtype('<U5')
+
+Be a list/matrix:
+	>>> m_a = 2
+	>>> m_b = 4
+	>>> lazy_matrix_mul(m_a, m_b)
+	8
+
+Be a list/matrix:
+	>>> m_a = 2
+	>>> m_b = [[1, 2], [3, 4]]
+	>>> lazy_matrix_mul(m_a, m_b)
+	array([[2, 4],
+	       [6, 8]])
+

@@ -49,3 +49,10 @@ Whit string:
 	>>> lazy_matrix_mul(m_a, m_b)
 	Traceback (most recent call last):
 	ValueError: data type must provide an itemsize
+
+Size of rows:
+	>>> m_a = [[1, 2, 5], [3, 4]]
+	>>> m_b = [[1, 2], [3, 4, 5]]
+	>>> lazy_matrix_mul(m_a, m_b)
+	Traceback (most recent call last):
+	ValueError: setting an array element with a sequence.

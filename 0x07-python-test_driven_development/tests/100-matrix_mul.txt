@@ -14,17 +14,32 @@ List of list:
 	Traceback (most recent call last):
 	TypeError: m_a must be a list of lists
 
-List empty:
+List empty 1:
 	>>> matrix_mul([[]], [[1, 2], [3, 4]])
 	Traceback (most recent call last):
 	ValueError: m_a can't be empty
 
-Must be int or float:
+List empty 2:
+	>>> matrix_mul([[1, 2], [3, 4]], [])
+	Traceback (most recent call last):
+	ValueError: m_b can't be empty
+
+Must be int or float 1:
 	>>> matrix_mul([["Hi", 2], [3, 4]], [[1, 2], [3, 4]])
 	Traceback (most recent call last):
 	TypeError: m_a should contain only integers or floats
 
-Row whit seem length;
+Must be int or float 2:
+	>>> matrix_mul([[1, 2], [3, 4]], [[1, "Hello"], [3, 4]])
+	Traceback (most recent call last):
+	TypeError: m_b should contain only integers or floats
+
+Row whit seem length 1:
+	>>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4, 5]])
+	Traceback (most recent call last):
+	TypeError: each row of m_b must be of the same size
+
+Row whit seem 2 length 2:
 	>>> matrix_mul([[1, 2], [3, 4, 5]], [[1, 2], [3, 4]])
 	Traceback (most recent call last):
 	TypeError: each row of m_a must be of the same size
@@ -33,3 +48,18 @@ If can't multiply:
 	>>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4], [5, 6]])
 	Traceback (most recent call last):
 	ValueError: m_a and m_b can't be multiplied
+
+Missing arguments:
+	>>> matrix_mul()
+	Traceback (most recent call last):
+	TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+
+Missing one argument:
+	>>> matrix_mul([[1, 2], [3, 4]],)
+	Traceback (most recent call last):
+	TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
+
+Integer * list:
+	>>> matrix_mul([4], [[3, 4], [5, 6]])
+	Traceback (most recent call last):
+	TypeError: m_a must be a list of lists

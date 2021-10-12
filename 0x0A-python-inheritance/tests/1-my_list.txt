@@ -1,0 +1,23 @@
+The ``1-my_list`` module
+======================
+
+Using ``print_sorted``
+-------------------
+
+This is a funtion that add two variables.  First import
+``print_sorted`` from the ``1-my_list`` module:
+
+    >>> MyList = __import__('1-my_list').MyList
+
+Funtion ok:
+	>>> MyList([3, 2, 1])
+	[3, 2, 1]
+
+Funtion print ok:
+	>>> MyList.print_sorted([3, 2, 1])
+	[1, 2, 3]
+
+Must be int:
+	>>> MyList.print_sorted([3, "Hi", 1])
+	Traceback (most recent call last):
+	TypeError: '<' not supported between instances of 'str' and 'int'

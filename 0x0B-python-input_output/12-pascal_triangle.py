@@ -5,10 +5,11 @@ representing the Pascal’s triangle"""
 
 def pascal_triangle(n):
     """representing the Pascal’s triangle"""
-    if n < 0:
+    if n <= 0:
         return []
-    
+
     end = n - 1
+
     pascal = [[1]]
 
     for i in range(end):

@@ -98,3 +98,15 @@ Checking for too many arguments:
 	Traceback (most recent call last):
 	...
 	TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+Checking for correction:
+	>>> b.integer_validator("integer", {1, 2})
+	Traceback (most recent call last):
+	...
+	TypeError: integer must be an integer
+
+Checking whit None:
+	>>> b.integer_validator("integer", None)
+	Traceback (most recent call last):
+	...
+	TypeError: integer must be an integer

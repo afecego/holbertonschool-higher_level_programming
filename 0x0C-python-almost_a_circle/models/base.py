@@ -29,7 +29,7 @@ class Base():
         new_list = []
         file = cls.__name__ + ".json"
         if list_objs is None:
-            return "[]"
+            return []
         for obj in list_objs:
             line = obj.to_dictionary()
             new_list.append(line)

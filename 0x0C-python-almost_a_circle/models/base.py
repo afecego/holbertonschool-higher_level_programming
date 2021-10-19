@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """class base"""
 import json
+import csv
 
 
 class Base():
@@ -56,3 +57,44 @@ class Base():
             dummy = cls(3, 3)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """serializes in CSV"""
+        file = cls.__name__ + ".csv"
+
+        with open(file, "w") as f:
+            write = csv.writer(f)
+            if cls.__name__ == "Rectangle":
+                for ob in list_objs:
+                    write.writerow([ob.id, ob.width, ob.height, ob.x, ob.y])
+            if cls.__name__ == "Square":
+                for ob in list_objs:
+                    write.writerow([ob.id, ob.size, ob.x, ob.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """deserializes in CSV"""
+        file = cls.__name__ + ".csv"
+        new_list = []
+
+        with open(file, "r") as f:
+            reader = csv.reader(f)
+            for args in reader:
+                if cls.__name__ == "Rectangle":
+                    dictionary = {
+                        "id": int(args[0]),
+                        "width": int(args[1]),
+                        "height": int(args[2]),
+                        "x": int(args[3]),
+                        "y": int(args[4])
+                    }
+                if cls.__name__ == "Square":
+                    dictionary = {
+                        "id": int(args[0]),
+                        "size": int(args[1]),
+                        "x": int(args[2]),
+                        "y": int(args[3])
+                    }
+                new_list.append(cls.create(**dictionary))
+        return new_list

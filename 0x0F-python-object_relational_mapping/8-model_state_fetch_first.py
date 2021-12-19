@@ -16,6 +16,9 @@ if __name__ == "__main__":
     session = Session()
 
     line = session.query(State).first()
-    print(f'{line.id}: {line.name}')
+    if line is not None:
+        print(f'{line.id}: {line.name}')
+    else:
+        print("Nothing")
 
     session.close()

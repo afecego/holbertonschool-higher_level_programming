@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-"""adds the State object “Louisiana” to the database hbtn_0e_6_usa"""
+"""deletes all State objects with a name containing the letter a 
+from the database hbtn_0e_6_usa"""
 import MySQLdb
 from sys import argv
 from model_state import Base, State
@@ -15,9 +16,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    add_state = State(name="Louisiana")
-    session.add(add_state)
-    session.commit()
-    print(add_state.id)
+    delet = session.query(State).filter(State.name.ilike('%a%'))
+    for row in delet:
+        session.delete(row)
 
+    session.commit()
     session.close()

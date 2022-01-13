@@ -8,7 +8,7 @@ import requests
 
 if __name__ == "__main__":
 
-    URL = "http://2ad4c0d5a99f.2c554f59.hbtn-cod.io:5000/search_user"
+    URL = "http://0.0.0.0:5000/search_user"
 
     if len(argv) > 1:
         q = argv[1]

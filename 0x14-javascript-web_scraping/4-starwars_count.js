@@ -15,7 +15,9 @@ request(web, (err, res, body) => {
 
     for (let j = 0; j < charac.length; j++) {
       const chara = charac[j];
-      if (chara === 'https://swapi-api.hbtn.io/api/people/18/') {
+      const id = chara.split('/');
+
+      if (id[5] === '18') {
         count++;
       }
     }

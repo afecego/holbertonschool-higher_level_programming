@@ -8,10 +8,9 @@ request(web, (err, res, body) => {
   if (err) {
     console.error(err);
   }
-  fs.writeFile(file, 'utf8', body, err => {
+  fs.writeFile(file, body, 'utf-8', (err) => {
     if (err) {
       console.error(err);
     }
-    console.log(body);
   });
 });
